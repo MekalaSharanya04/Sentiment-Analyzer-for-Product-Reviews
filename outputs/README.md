@@ -1,1 +1,10 @@
-This folder will store generated outputs such as prediction results, graphs, and evaluation reports.
+# Outputs
+
+This folder contains the results generated during model evaluation.
+
+Examples include:
+
+- Model accuracy
+- Classification reports
+- Confusion matrices
+- Error analysis results
