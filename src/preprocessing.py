@@ -1,13 +1,17 @@
-"""
-preprocessing.py
+import re
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 
-This module is responsible for preprocessing product review text.
 
-Future Tasks:
-- Remove punctuation
-- Convert text to lowercase
-- Remove stop words
-- Tokenization
-- Lemmatization
-- TF-IDF Vectorization
-"""
+def clean_text(text):
+    text = str(text).lower()
+
+    text = re.sub(r"[^\w\s]", "", text)
+    text = re.sub(r"\d+", "", text)
+    text = re.sub(r"\s+", " ", text).strip()
+
+    words = text.split()
+
+    stop_words = set(ENGLISH_STOP_WORDS)
+    words = [word for word in words if word not in stop_words]
+
+    return " ".join(words)
