@@ -1,0 +1,35 @@
+Sentiment Analyzer - Model Evaluation
+
+Model: Linear SVM
+Feature Extraction: TF-IDF
+Dataset: clean_reviews_v2.csv
+Test Size: 20%
+Random State: 42
+
+Accuracy: 92.39%
+
+Classification Report:
+
+Negative:
+Precision: 0.65
+Recall: 0.74
+F1-Score: 0.69
+
+Neutral:
+Precision: 0.41
+Recall: 0.46
+F1-Score: 0.43
+
+Positive:
+Precision: 0.97
+Recall: 0.96
+F1-Score: 0.96
+
+Overall:
+Macro Average F1-Score: 0.70
+Weighted Average F1-Score: 0.93
+
+Observation:
+The model performs very well for Positive reviews.
+Performance for Negative and Neutral reviews is lower.
+This indicates that the dataset contains a strong imbalance toward Positive reviews.
