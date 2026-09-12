@@ -13,5 +13,4 @@ def clean_text(text):
 
     stop_words = set(ENGLISH_STOP_WORDS)
     words = [word for word in words if word not in stop_words]
-
     return " ".join(words)
