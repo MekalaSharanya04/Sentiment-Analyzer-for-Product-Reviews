@@ -1,5 +1,35 @@
-"""Project helper functions."""
+"""Utility functions for sentiment analysis."""
+
+
 def sentiment_counts(predictions):
-    return {s:sum(x==s for x in predictions) for s in ['Positive','Neutral','Negative']}
-def display_prediction(review,sentiment):
-    print(f'Review: {review}\nPredicted Sentiment: {sentiment}')
+
+    return {
+        "Positive": sum(
+            x == "Positive"
+            for x in predictions
+        ),
+
+        "Neutral": sum(
+            x == "Neutral"
+            for x in predictions
+        ),
+
+        "Negative": sum(
+            x == "Negative"
+            for x in predictions
+        )
+    }
+
+
+def display_prediction(
+    review,
+    sentiment
+):
+
+    print(
+        f"Review: {review}"
+    )
+
+    print(
+        f"Predicted Sentiment: {sentiment}"
+    )
