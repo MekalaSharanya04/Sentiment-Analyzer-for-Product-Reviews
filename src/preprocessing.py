@@ -1,16 +1,8 @@
+"""Text preprocessing utilities."""
 import re
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
-
-
+STOP_WORDS=set(ENGLISH_STOP_WORDS)
 def clean_text(text):
-    text = str(text).lower()
-
-    text = re.sub(r"[^\w\s]", "", text)
-    text = re.sub(r"\d+", "", text)
-    text = re.sub(r"\s+", " ", text).strip()
-
-    words = text.split()
-
-    stop_words = set(ENGLISH_STOP_WORDS)
-    words = [word for word in words if word not in stop_words]
-    return " ".join(words)
+    text='' if text is None else str(text)
+    text=text.lower(); text=re.sub(r'http\S+|www\S+',' ',text); text=re.sub(r'[^a-zA-Z\s]',' ',text); text=re.sub(r'\s+',' ',text).strip()
+    return ' '.join(w for w in text.split() if w not in STOP_WORDS)
