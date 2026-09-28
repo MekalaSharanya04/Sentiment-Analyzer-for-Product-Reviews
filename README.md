@@ -1,40 +1,64 @@
 # 💬 Sentiment Analyzer for Product Reviews
 
-A Python NLP and machine-learning application that classifies product reviews as **Positive, Neutral, or Negative** using **TF-IDF + Linear SVM**.
+A Machine Learning application that analyzes product reviews and classifies them as **Positive, Neutral, or Negative**.
 
-## Why this project?
-Businesses can receive thousands of written reviews. Ratings show *how much* customers liked a product, while written reviews explain *why*. Manually reading every review is slow. This project automatically classifies large collections of feedback and lets a business inspect the actual negative, neutral, or positive reviews.
+## 🎯 Problem Statement
 
-## Features
+E-commerce platforms can receive thousands of written customer reviews. Manually reading every review is time-consuming and makes it difficult for businesses to quickly identify negative feedback and common customer concerns.
+
+## 💡 Proposed Solution
+
+This project uses Natural Language Processing and Machine Learning to automatically analyze written reviews.
+
+The application provides:
+
 - Single-review sentiment prediction
-- Bulk CSV sentiment analysis
-- Positive/Neutral/Negative counts and percentages
-- Interactive sentiment chart
-- Filter by sentiment
-- Search reviews by keyword
-- View the actual reviews behind a sentiment count
-- Download filtered analysis results
-- Cached model loading for a more responsive Streamlit UI
+- Bulk CSV review analysis
+- Positive/Neutral/Negative classification
+- Sentiment distribution visualization
+- Negative-review filtering
+- Keyword search inside reviews
+- Downloadable analysis results
 
-## Pipeline
-`Reviews → Cleaning → TF-IDF → Linear SVM → Sentiment → Dashboard`
+## 🧠 Machine Learning Pipeline
 
-## Technologies
-Python, Pandas, Scikit-learn, TF-IDF, Linear SVM, Joblib, Streamlit, Matplotlib, Git and GitHub.
+Customer Reviews  
+↓  
+Text Preprocessing  
+↓  
+TF-IDF Feature Extraction  
+↓  
+Linear SVM Classifier  
+↓  
+Positive / Neutral / Negative  
+↓  
+Streamlit Dashboard  
+↓  
+Business Feedback Analysis
 
-## Run
-```bash
-python -m pip install -r requirements.txt
-python src/train_model.py
-python -m streamlit run app/app.py --server.address 127.0.0.1 --server.port 8502
-```
-Open `http://127.0.0.1:8502`.
+## 🛠️ Technologies Used
 
-## CSV
-Bulk mode recognizes: `Clean_Review`, `Review`, `review`, `Review_Text`, `review_text`, `Text`, or `text`.
+- Python
+- Pandas
+- Scikit-learn
+- TF-IDF
+- Linear SVM
+- Joblib
+- Matplotlib
+- Streamlit
+- GitHub
 
-## Evaluation
-The existing evaluation achieved about **92.39% accuracy**. Because the dataset is strongly dominated by Positive reviews, precision, recall and F1-score should also be considered.
+## 📊 Model Evaluation
 
-## Future scope
-Aspect-based sentiment (battery/camera/delivery), multilingual support, database integration, product dashboards, time-based trends, authentication and cloud deployment.
+The current project evaluation achieved approximately **92.39% accuracy** on the held-out test data.
+
+Because the dataset contains many more Positive reviews than Neutral and Negative reviews, accuracy should be considered together with precision, recall and F1-score.
+
+## ⭐ Main Feature
+
+The system does not only display:
+
+```text
+Positive: 88%
+Negative: 10%
+Neutral: 2%
