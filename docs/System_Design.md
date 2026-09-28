@@ -1,19 +1,39 @@
 # System Design
 
-```text
-Customer Reviews
-      ↓
-Text Preprocessing
-      ↓
-TF-IDF Feature Extraction
-      ↓
-Linear SVM Classifier
-      ↓
-Positive / Neutral / Negative
-      ↓
-Streamlit Dashboard
-      ↓
-Filter • Search • Download
-```
+## System Architecture
 
-The bulk workflow is primarily intended for business/product teams that need to inspect large volumes of customer feedback efficiently.
+```text
+                 CUSTOMER REVIEWS
+                        |
+                        v
+              +-------------------+
+              | Text Preprocessing|
+              +---------+---------+
+                        |
+                        v
+              +-------------------+
+              | TF-IDF Vectorizer |
+              +---------+---------+
+                        |
+                        v
+              +-------------------+
+              |   Linear SVM      |
+              |  Classification   |
+              +---------+---------+
+                        |
+             +----------+----------+
+             |          |          |
+             v          v          v
+          Positive   Neutral    Negative
+             |          |          |
+             +----------+----------+
+                        |
+                        v
+              +-------------------+
+              | Streamlit Dashboard|
+              +---------+---------+
+                        |
+             +----------+----------+
+             |          |          |
+             v          v          v
+          Charts     Filtering   Download
